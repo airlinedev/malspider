@@ -28,33 +28,33 @@ class Command(BaseCommand):
             domain = org.domain
             
             if "http://" in domain:
-				domain = domain.replace("http://", "")
-				if "www." in domain:
-					allowed_domains = domain + "," + domain[4:]
-					start_urls = 'http://' + domain + ',http://' + domain[4:]
-					
-				else:
-					allowed_domains = domain + ",www." + domain
-					start_urls = 'http://' + domain + ',http://www.' + domain
-			
-			elif "https://" in domain:
-				domain = domain.replace("https://", "")
-				if "www." in domain:
-					allowed_domains = domain + "," + domain[4:]
-					start_urls = 'https://' + domain + ',https://' + domain[4:]
-					
-				else:
-					allowed_domains = domain + ",www." + domain
-					start_urls = 'http://' + domain + ',http://www.' + domain
-				
-			else:
-				if "www." in domain:
-					allowed_domains = domain + "," + domain[4:]
-					start_urls = 'http://' + domain + ',http://' + domain[4:]
-					
-				else:
-					allowed_domains = domain + ",www." + domain
-					start_urls = 'http://' + domain + ',http://www.' + domain
+                domain = domain.replace("http://", "")
+                if "www." in domain:
+                    allowed_domains = domain + "," + domain[4:]
+                    start_urls = 'http://' + domain + ',http://' + domain[4:]
+                    
+                else:
+                    allowed_domains = domain + ",www." + domain
+                    start_urls = 'http://' + domain + ',http://www.' + domain
+            
+            elif "https://" in domain:
+                domain = domain.replace("https://", "")
+                if "www." in domain:
+                    allowed_domains = domain + "," + domain[4:]
+                    start_urls = 'https://' + domain + ',https://' + domain[4:]
+                    
+                else:
+                    allowed_domains = domain + ",www." + domain
+                    start_urls = 'http://' + domain + ',http://www.' + domain
+                
+            else:
+                if "www." in domain:
+                    allowed_domains = domain + "," + domain[4:]
+                    start_urls = 'http://' + domain + ',http://' + domain[4:]
+                    
+                else:
+                    allowed_domains = domain + ",www." + domain
+                    start_urls = 'http://' + domain + ',http://www.' + domain
 
             crawl_params = {
                     "org": org.id,
